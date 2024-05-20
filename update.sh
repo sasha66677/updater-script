@@ -1,0 +1,14 @@
+#!/bin/bash
+
+pkill -f main.py
+
+LOCAL_REPO_PATH="$LOCAL_REPO_PATH"
+GLOBAL_REPO_URL="$GLOBAL_REPO_URL"
+BRANCH_NAME="$BRANCH_NAME"
+
+cd $LOCAL_REPO_PATH
+
+git pull origin $BRANCH_NAME
+
+cd $LOCAL_REPO_PATH
+python3 main.py &
